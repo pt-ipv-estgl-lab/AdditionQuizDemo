@@ -1,6 +1,8 @@
-## Exercise 4.8:
+## Exercise 4.8: 
 
-a program that administers a basic addition quiz to the user. There should be ten questions. Each question is a simple addition problem such as17 + 42, where the numbers in the problem are chosen at random(and are not too big). The program should ask the user all ten questions and getthe user's answers. After asking all the questions, the user should print each question again, with the user's answer. If the user got the answer right, the program should say so; if not, the program should give the correct answer. At the end, tell the usertheir score on the quiz, where each correct answer counts for ten points.
+A program that administers a basic addition quiz to the user. There should be ten questions. Each question is a simple addition problem such as17 + 42, where the numbers in the problem are chosen at random(and are not too big). The program should ask the user all ten questions and getthe user's answers. After asking all the questions, the user should print each question again, with the user's answer. If the user got the answer right, the program should say so; if not, the program should give the correct answer. At the end, tell the usertheir score on the quiz, where each correct answer counts for ten points.
+
+Here is a version that uses parameters and no global variables.
 
 ## Folder Structure
 

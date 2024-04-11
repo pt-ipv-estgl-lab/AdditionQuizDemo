@@ -10,17 +10,17 @@ import java.util.Scanner;
  */
 public class AdditionQuiz {
 
-    private static int[] firstNumbers; // The first numbers in all ten questions.
-    private static int[] secondNumbers; // The second numbers in all ten questions.
-    private static int[] userAnswers; // The user's answers to the ten questions.
-
     public static void main(String[] args) {
+        int[] firstNum = new int[10]; // The first numbers in all ten questions.
+        int[] secondNum = new int[10]; // The second numbers in all ten questions.
+        int[] userAns = new int[10]; // The user's answers to the ten questions.
+
         System.out.println();
         System.out.println("Welcome to the addition quiz!");
         System.out.println();
-        createQuiz();
-        administerQuiz();
-        gradeQuiz();
+        createQuiz(firstNum, secondNum);
+        administerQuiz(firstNum, secondNum, userAns);
+        gradeQuiz(firstNum, secondNum, userAns);
     }
 
     /**
@@ -28,7 +28,7 @@ public class AdditionQuiz {
      * for the quiz. For each question, the user is told whether they got
      * it right.
      */
-    private static void gradeQuiz() {
+    private static void gradeQuiz(int[] firstNumbers, int[] secondNumbers, int[] userAnswers) {
         System.out.println();
         System.out.println("Here are the correct answers:");
         int numberCorrect = 0;
@@ -56,9 +56,8 @@ public class AdditionQuiz {
      * Asks the user each of the ten quiz questions and gets the user's answers.
      * The answers are stored in an array, which is created in this subroutine.
      */
-    private static void administerQuiz() {
+    private static void administerQuiz(int[] firstNumbers, int[] secondNumbers, int[] userAnswers) {
         Scanner stdin = new Scanner(System.in);
-        userAnswers = new int[10];
 
         for (int i = 0; i < 10; i++) {
             int questionNum = i + 1;
@@ -70,13 +69,14 @@ public class AdditionQuiz {
         stdin.close();
     }
 
-    /**
+      /**
      * Creates the arrays that hold the numbers for the questions and fills
-     * them with random numbers.
+     * them with random numbers.  The parameters are arrays that will hold
+     * the random numbers for the first and second operands of each addition
+     * problem.  The arrays must have already been created when this subroutine
+     * is called!
      */
-    private static void createQuiz() {
-        firstNumbers = new int[10];
-        secondNumbers = new int[10];
+    private static void createQuiz(int[] firstNumbers, int[] secondNumbers) {
         Random nextInt = new Random();
 
         for (int i = 0; i < 10; i++) {
